@@ -1,0 +1,124 @@
+<div class="container m-5 p-5 bg-secondary-subtle">
+
+  <div class="card">
+    <div class="card-body">
+      <form 
+      class="row g-3"
+      [formGroup]="studentModel"
+    >
+        <div class="col-md-6">
+          <label for="inputNombre" class="form-label">Nombres</label>
+          <input 
+            [formControl]="nombresControl"
+            type="text"
+            class="form-control"
+            [class.is-invalid]="nombresControl.touched && nombresControl.invalid"
+            id="inputNombre"
+            >
+          <div class="invalid-feedback">
+            Campo requerido
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputApellido" class="form-label">Apellidos</label>
+          <input 
+            [formControl]="apellidosControl"
+            type="text"
+            class="form-control" 
+            [class.is-invalid]="apellidosControl.touched && apellidosControl.invalid"
+            id="inputApellido"
+            >
+          <div class="invalid-feedback">
+            Campo requerido
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail" class="form-label">Email</label>
+          <input 
+            [formControl]="emailControl"
+            type="email"
+            class="form-control"
+            [class.is-invalid]="emailControl.touched && emailControl.invalid"
+            id="inputEmail"
+            >
+          <div class="invalid-feedback">
+            Campo requerido
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputFechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+          <input
+            [formControl]="fechaNacimientoControl" 
+            type="date" 
+            class="form-control" 
+            [class.is-invalid]="fechaNacimientoControl.touched && fechaNacimientoControl.invalid"
+            id="inputFechaNacimiento"          
+          >
+          <div class="invalid-feedback">
+            Campo requerido
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputTelefono" class="form-label">Telefono de contacto</label>
+          <input 
+            [formControl]="direccionRecidenciaControl"
+            type="text"
+            class="form-control"
+            [class.is-invalid]="direccionRecidenciaControl.touched && direccionRecidenciaControl.invalid"
+            id="inputTelefono" 
+            placeholder="456 156 789">
+        </div> 
+        <div class="col-md-6">
+          <label for="inputDireccion" class="form-label">Direccion de recidencia</label>
+          <input 
+            [formControl]="telefonoControl"
+            type="text"
+            class="form-control"
+            [class.is-invalid]="telefonoControl.touched && telefonoControl.invalid"
+            id="inputDireccion" 
+            placeholder="Av siempre viva 8"
+          >
+          <div class="invalid-feedback">
+            Campo requerido
+          </div>
+        </div>        
+        <div class="col-md-3">
+          <label for="inputCiudad" class="form-label">Ciudad</label>
+          <input 
+            [formControl]="ciudadControl"
+            type="text" 
+            class="form-control"
+            [class.is-invalid]="ciudadControl.touched && ciudadControl.invalid"
+            id="inputCiudad"
+          >
+          <div class="invalid-feedback">
+            Campo requerido
+          </div>
+        </div>        
+        <div class="col-md-3">
+          <label for="inputZip" class="form-label">Codigo Postal</label>
+          <input 
+            [formControl]="codigoPostalControl"
+            type="text" 
+            class="form-control"
+            [class.is-invalid]="codigoPostalControl.touched && codigoPostalControl.invalid"
+            id="inputZip"
+          >          
+          <div class="invalid-feedback">
+            Campo requerido            
+          </div>
+        </div>
+        <div class="col-12 p-2">
+          <button type="submit" class="btn btn-primary">Registro</button>
+        </div>
+    </form>
+    <div class="card">
+      <div class="card-body">
+        <pre class="p-2">
+          {{studentModel.value | json}}
+        </pre>
+      </div>
+    </div>
+  </div>
+    
+</div>
